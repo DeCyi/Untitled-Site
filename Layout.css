@@ -15,7 +15,7 @@ header .Image {
     display: block;
     background-image: url('Image/W.jpg');
     background-size: cover;
-    background-attachment:local
+    background-attachment:local;
     background-position: center center;
     height: 300px;
 }
@@ -39,8 +39,8 @@ body {
 
 main .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 
 main .card {
     border: 5px solid #ccc;
@@ -56,3 +56,23 @@ main .card {
   .card p {
     margin-top: 10px;
   }
+  
+/* Media */
+
+  @media only screen and (max-width: 600px) {
+    header .Image {
+        height: 30vh;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    main .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media only screen and (min-width: 901px) {
+    main .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
